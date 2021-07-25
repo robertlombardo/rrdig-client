@@ -21,7 +21,7 @@ npm run dev
 _... and prepare to be dazzled ..._
 ***
 #### TODO (@robertlombardo)
-- prototype UI with no data
+- ~~prototype UI with no data~~
 - prototype search action & image grid with mock data in client
 - prototype API with mock local data
 - Search for images by name using an input box and the API 
@@ -30,5 +30,6 @@ _... and prepare to be dazzled ..._
 - List all uploaded images 
 - deploy to public cloud (docker)
 - unit tests
+- lazy load images (placeholders?)
 - fuzzy / type-ahead search?
 - pagination?
