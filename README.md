@@ -20,6 +20,14 @@ npm run dev
 ##### To use the app, open [http://localhost:3000](http://localhost:3000) with your web browser.
 _... and prepare to be dazzled ..._
 ***
+
+### Public Test Deployment
+##### Visit [https://rrdig-client-mvlfu.ondigitalocean.app/](https://rrdig-client-mvlfu.ondigitalocean.app/)
+
+_Thanks for checking out Rob's Razzle Dazzle Image Gallery! I hope you enjoy it as much as I've enjoyed working on it :)
+-- Rob_
+***
+
 #### TODO (@robertlombardo)
 - ~~prototype UI with no data~~
 - ~~prototype search action & image grid with mock data in client~~
@@ -28,7 +36,8 @@ _... and prepare to be dazzled ..._
 - Upload images and store them (where?) using an API 
 - You should only allow images to be uploaded.
 - List all uploaded images 
-- deploy to public cloud (docker)
+- ~~deploy to public cloud~~
+- dockerize deployment(s)
 - BUG: antd carousel losing aspect ratio for very large images
 - unit tests
 - lazy load images (placeholders?)
