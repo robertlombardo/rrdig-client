@@ -1,5 +1,5 @@
 .content {
-  padding: 2rem 2rem;
+  padding: 1.5rem 1.5rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,19 +13,15 @@
 }
 
 .image_wrapper {
-  min-height: 600px;
-  min-width: 600px;
-  max-width:  calc(900px - 8rem);
+  min-height: 500px;
+  min-width: 500px;
+  max-width:  calc(100% - 4rem);
   margin: 2rem 2rem;
   padding: 2rem 2rem;
   background:  #333333;
   display: flex !important;
   justify-content: center;
   align-items: center;
-}
-
-.image {
-  max-width: 100%;
 }
 
 .carousel_dots li button {
