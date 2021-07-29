@@ -31,11 +31,13 @@ _Thanks for checking out Rob's Razzle Dazzle Image Gallery! I hope you enjoy it 
 #### TODO (@robertlombardo)
 - ~~prototype UI with no data~~
 - ~~prototype search action & image grid with mock data in client~~
-- prototype API with mock local data
-- Search for images by name using an input box and the API 
+- ~~prototype API with mock local data~~
+- ~~Search for images by name using an input box and the API~~
 - Upload images and store them (where?) using an API 
 - You should only allow images to be uploaded.
-- List all uploaded images 
+- List all uploaded images
+- search by multiple tags at once
+- support mobile layout!
 - ~~deploy to public cloud~~
 - dockerize deployment(s)
 - BUG: antd carousel losing aspect ratio for very large images
