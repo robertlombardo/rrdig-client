@@ -48,16 +48,18 @@ export default function Home(props) {
   };
 
   const uploadImages = async () => {
-    for (const { originFileObj } of fileList) {
-      const uploadedFile = await uploadMutation({
-        variables: {
-          file: originFileObj,
-          tags: tagState.tags
-        }
-      })
+    try {
+      for (const { originFileObj } of fileList) {
+        const uploadedFile = await uploadMutation({
+          variables: {
+            file: originFileObj,
+            tags: tagState.tags
+          }
+        })
+      }
+    } finally {
+      dispose()
     }
-
-    dispose()
   }
 
   // tags stuff
@@ -107,13 +109,11 @@ export default function Home(props) {
   }
 
   const saveInputRef = input => {
-    _input = input;
-    // setTagState({ ...tagState, input })
+    _input = input
   };
 
   const saveEditInputRef = editInput => {
-    _editInput = input;
-    // setTagState({ ...tagState, editInput })
+    _editInput = input
   };
 
   return (
@@ -122,6 +122,7 @@ export default function Home(props) {
       visible={props.show}
       onCancel={dispose}
       onOk={uploadImages}
+      destroyOnClose={true}
     >
       <Upload {...uploadEleProps} multiple accept="image/*">
         <Button icon={<UploadOutlined />}>Select image file(s) to upload</Button>
