@@ -123,7 +123,7 @@ export default function Home(props) {
       onCancel={dispose}
       onOk={uploadImages}
     >
-      <Upload {...uploadEleProps} multiple>
+      <Upload {...uploadEleProps} multiple accept="image/*">
         <Button icon={<UploadOutlined />}>Select image file(s) to upload</Button>
       </Upload>
       <br />
