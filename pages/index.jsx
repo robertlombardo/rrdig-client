@@ -74,7 +74,8 @@ export default function Home(props) {
             </Row>
             <div style={{ marginTop: '6px' }}>
               <Text italic>
-                Try searching by tags such as <b>hire this guy</b>,  <b>winning</b>, or <b>robert</b>
+                <div>Try searching by tags such as <b>hire this guy</b>,  <b>winning</b>, or <b>robert</b>.</div>
+                <div>Enter <b>all</b> to see everything in the data set.</div>
               </Text>
             </div>
             <br />

@@ -35,12 +35,12 @@ _Thanks for checking out Rob's Razzle Dazzle Image Gallery! I hope you enjoy it 
 - ~~Search for images by name using an input box and the API~~
 - ~~Upload images and store them (Digital Ocean Spaces) using an API~~
 - ~~You should only allow images to be uploaded.~~
-- List all uploaded images
+- ~~List all uploaded images~~
 - search by multiple tags at once
 - support mobile layout!
 - ~~deploy to public cloud~~
 - dockerize deployment(s)
-- BUG: antd carousel losing aspect ratio for very large images
+- ~~BUG: carousel image wrapper should shrink to fit (bottom can stretch to non-focused img)~~
 - unit tests
 - lazy load images (placeholders?)
 - fuzzy / type-ahead search?
