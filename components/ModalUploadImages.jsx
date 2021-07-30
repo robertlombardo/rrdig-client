@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import apolloClient from '../apollo-client'
 import { Input, Button, Modal, Tag, Tooltip, Upload } from 'antd'
-import { PlusOutlined } from '@ant-design/icons'
+import { PlusOutlined, UploadOutlined } from '@ant-design/icons'
 
 const uploadImageMutation = gql`
 mutation ($file: Upload!, $tags: [String!]!) {

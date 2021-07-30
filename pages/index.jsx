@@ -4,7 +4,7 @@ import 'antd/dist/antd.css'
 import styles from '../styles/Home.module.css'
 import { gql, useMutation } from '@apollo/client'
 import apolloClient from '../apollo-client'
-
+import { UploadOutlined } from '@ant-design/icons'
 import { Layout, Card, Space, Row, Col, Input, Button, Carousel, Image, Typography } from 'antd'
 const { Content } = Layout
 const { Search } = Input
@@ -65,7 +65,11 @@ export default function Home(props) {
                 />
               </Col>
               <Col span={12} style={{textAlign: 'right'}}>
-                <Button type="primary" onClick={setShowUploadModal.bind(null, true)}>UPLOAD</Button>
+                <Button
+                  type="primary"
+                  onClick={setShowUploadModal.bind(null, true)}
+                  icon={<UploadOutlined style={{ marginRight: 10 }} />}
+                ><b>UPLOAD</b></Button>
               </Col>
             </Row>
             <div style={{ marginTop: '6px' }}>

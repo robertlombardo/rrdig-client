@@ -33,7 +33,7 @@ _Thanks for checking out Rob's Razzle Dazzle Image Gallery! I hope you enjoy it 
 - ~~prototype search action & image grid with mock data in client~~
 - ~~prototype API with mock local data~~
 - ~~Search for images by name using an input box and the API~~
-- Upload images and store them (where?) using an API 
+- ~~Upload images and store them (Digital Ocean Spaces) using an API~~
 - You should only allow images to be uploaded.
 - List all uploaded images
 - search by multiple tags at once
