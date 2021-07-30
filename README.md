@@ -40,7 +40,7 @@ _Thanks for checking out Rob's Razzle Dazzle Image Gallery! I hope you enjoy it 
 - support mobile layout!
 - ~~deploy to public cloud~~
 - dockerize deployment(s)
-- ~~BUG: carousel image wrapper should shrink to fit (bottom can stretch to non-focused img)~~
+- BUG: carousel image wrapper should shrink to fit (bottom can stretch to non-focused img)
 - unit tests
 - lazy load images (placeholders?)
 - fuzzy / type-ahead search?
