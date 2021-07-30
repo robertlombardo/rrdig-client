@@ -5,10 +5,12 @@ import styles from '../styles/Home.module.css'
 import { gql, useMutation } from '@apollo/client'
 import apolloClient from '../apollo-client'
 
-import { Layout, Card, Space, Row, Col, Input, Button, Carousel, Image, Typography, Modal, Upload } from 'antd'
+import { Layout, Card, Space, Row, Col, Input, Button, Carousel, Image, Typography } from 'antd'
 const { Content } = Layout
 const { Search } = Input
-const { Text } = Typography 
+const { Text } = Typography
+
+import ModalUploadImages from '../components/ModalUploadImages'
 
 const getImagesQuery = gql`
 query getImages($tags: [String]) {
@@ -18,22 +20,11 @@ query getImages($tags: [String]) {
   }
 }`
 
-const uploadImageMutation = gql`
-mutation ($file: Upload!, $tags: [String!]!) {
-  uploadImage(file: $file, tags: $tags) {
-    filename
-    mimetype
-    encoding
-  }
-}`
-
 export default function Home(props) {
   const [searchInput, setSearchInput] = useState()
   const [pendingImgSearch, setPendingImgSearch] = useState()
   const [imgSearchResults, setImgSearchResults] = useState()
   const [showUploadModal, setShowUploadModal] = useState()
-  const [fileList, setFileList] = useState()
-  const [uploadMutation, what_is_this] = useMutation(uploadImageMutation)
 
   const onSearchInputEntered = async () => {
     setPendingImgSearch(true)
@@ -51,34 +42,6 @@ export default function Home(props) {
   }
 
   const carouselContent = imgSearchResults || props.defaultImgSearchResults || []
-
-
-  const uploadProps = {
-    listType: 'picture',
-    beforeUpload: file => {
-      const isImg = file.type.startsWith('image')
-
-      if (!isImg) {
-        message.error(`${file.name} is not an image file`);
-      }
-      return isImg ? true : Upload.LIST_IGNORE;
-    },
-    onChange: (info) => {
-      setFileList(info.fileList)
-    }
-  };
-
-  const uploadImages = async () => {
-    for (const { originFileObj } of fileList) {
-      const uploadedFile = await uploadMutation({
-        variables: {
-          file: originFileObj,
-          tags: ['potato']
-        }
-      })
-    }
-    setShowUploadModal(false)
-  }
 
   return (
     <div>
@@ -112,11 +75,15 @@ export default function Home(props) {
             </div>
             <br />
             <div className={styles.carousel_wrapper}>
-              <Carousel style={{ maxWidth: '100%' }} dots={{ className: styles.carousel_dots }}>
+              <Carousel
+                style={{ maxWidth: '100%' }}
+                dots={{ className: styles.carousel_dots }}
+                dotPosition="top"
+              >
                 {carouselContent.length
                   ? carouselContent.map(({ imgUrl }, i) => (
                     <div key={i} className={styles.image_wrapper}>
-                      <Image height={460} width="auto" style={{ maxWidth: '100%' }} src={imgUrl} alt={imgUrl} />
+                      <Image src={imgUrl} alt={imgUrl} />
                     </div>
                   ))
                   : (
@@ -130,16 +97,10 @@ export default function Home(props) {
           </Card>
         </Content>
       </Layout>
-      <Modal
-        title="Upload an Image"
-        visible={showUploadModal}
+      <ModalUploadImages
+        show={showUploadModal}
         onCancel={setShowUploadModal.bind(null, false)}
-        onOk={uploadImages}
-      >
-        <Upload {...uploadProps}>
-          <Button>Select image file(s) to upload</Button>
-        </Upload>
-      </Modal>
+      />
     </div>
   )
 }
