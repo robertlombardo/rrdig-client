@@ -6,14 +6,23 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ```bash
 git clone https://github.com/robertlombardo/rrdig-client
+cd rrdig-client
 ```
 
 ### Running the Dev Server
 
-([NodeJS](https://nodejs.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are required)
+##### .env file
+By default the client points to an Apollo server at `http://localhost:8080/graphql`, but you can point it somewhere else by adding an .env file:
 
 ```bash
-cd rrdig-client
+# .env
+NEXT_PUBLIC_APOLLO_ENDPOINT=https://my-api-deployment/graphql
+```
+
+
+([NodeJS](https://nodejs.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are required for installing dependencies & starting the NextJS server...)
+
+```bash
 npm install
 npm run dev
 ```
